@@ -4,9 +4,7 @@ export let state = {
   playlists: [],
   profile: {
     name: "Your Name",
-    tagline: "Your sound, your page, your rules.",
-    theme: "neon",
-    font: "modern"
+    tagline: "Your sound, your page, your rules."
   }
 };
 
@@ -21,9 +19,7 @@ function loadLocalState() {
   try {
     const parsed = JSON.parse(raw);
     state = { ...state, ...parsed };
-  } catch (e) {
-    console.warn("Failed to parse saved state");
-  }
+  } catch (e) {}
 }
 
 export function saveLocalState() {
@@ -31,14 +27,14 @@ export function saveLocalState() {
 }
 
 function initDB() {
-  const request = indexedDB.open("musevault_db", 1);
+  const req = indexedDB.open("musevault_db", 1);
 
-  request.onupgradeneeded = (e) => {
+  req.onupgradeneeded = (e) => {
     db = e.target.result;
     db.createObjectStore("tracks", { keyPath: "id" });
   };
 
-  request.onsuccess = (e) => {
+  req.onsuccess = (e) => {
     db = e.target.result;
   };
 }
