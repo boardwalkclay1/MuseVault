@@ -1,19 +1,9 @@
 import { state, saveLocalState, db } from "./storage.js";
 import { playTrack } from "./player.js";
 
-export function renderLibrary(app) {
-  app.innerHTML = `
-    <h2>Library</h2>
+document.getElementById("fileInput").addEventListener("change", handleFiles);
 
-    <input type="file" id="fileInput" multiple accept="audio/*,video/*" />
-
-    <div id="trackList"></div>
-  `;
-
-  document.getElementById("fileInput").addEventListener("change", handleFiles);
-
-  renderTrackList();
-}
+renderTrackList();
 
 function handleFiles(e) {
   const files = [...e.target.files];
@@ -44,8 +34,6 @@ function handleFiles(e) {
 
 function renderTrackList() {
   const list = document.getElementById("trackList");
-  if (!list) return;
-
   list.innerHTML = state.tracks
     .map(
       (t) => `
