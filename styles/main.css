@@ -1,0 +1,241 @@
+/* -------------------------------------------------------
+   MUSEVAULT — CINEMATIC LOCAL-FIRST MUSIC PROFILE UI
+   Author: Clayvonte x Copilot
+   Purpose: Global styling for all modules (Library, Playlists,
+            Profile, Preview)
+-------------------------------------------------------- */
+
+/* ---------- ROOT THEME VARIABLES ---------- */
+:root {
+  --bg: #05060a;
+  --bg-alt: #0b0d14;
+  --panel: #11131a;
+  --panel-alt: #161922;
+  --text: #f5f5f7;
+  --muted: #9ca3af;
+  --border: #1f2933;
+
+  --accent: #ff4b8b;
+  --accent-soft: rgba(255, 75, 139, 0.15);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 6px;
+
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: radial-gradient(circle at top, #101322 0, #05060a 55%, #020308 100%);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+/* ---------- PAGE WRAPPER ---------- */
+body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- HEADERS ---------- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* ---------- PANELS ---------- */
+.panel {
+  background: var(--panel);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- INPUTS ---------- */
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 12px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: 0.2s ease;
+}
+
+button.primary {
+  background: linear-gradient(135deg, #ff4b8b, #f97316);
+  color: #0b0d14;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+button.primary:hover {
+  filter: brightness(1.1);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+button.ghost:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ---------- TRACK LIST ---------- */
+.track-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel-alt);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  transition: 0.2s ease;
+}
+
+.track-row:hover {
+  border-color: var(--accent);
+  background: rgba(255, 75, 139, 0.08);
+}
+
+/* ---------- PLAYLIST CARDS ---------- */
+.playlist-card {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playlist-card:hover {
+  border-color: var(--accent);
+}
+
+/* ---------- PREVIEW PAGE ---------- */
+#preview {
+  background: var(--panel);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+#preview h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+#preview p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+#preview ul {
+  list-style: none;
+  margin-top: 6px;
+}
+
+#preview li {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+}
+
+/* ---------- ACCENT THEMES (DYNAMIC) ---------- */
+.theme-neon {
+  --accent: #ff4b8b;
+}
+
+.theme-sunset {
+  --accent: #f97316;
+}
+
+.theme-ocean {
+  --accent: #0ea5e9;
+}
+
+.theme-forest {
+  --accent: #16a34a;
+}
+
+.theme-mono {
+  --accent: #e5e7eb;
+}
