@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MuseVault</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+  <div id="app"></div>
+
+  <script type="module">
+    import { initRouter } from "./modules/router.js";
+    import { initStorage } from "./modules/storage.js";
+
+    initStorage();
+    initRouter();
+  </script>
+
+</body>
+</html>
