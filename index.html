@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>MuseVault</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
+  <h1>MuseVault</h1>
+  <p>Your local‑first music profile engine.</p>
 
-  <div id="app"></div>
-
-  <script type="module">
-    import { initRouter } from "./modules/router.js";
-    import { initStorage } from "./modules/storage.js";
-
-    initStorage();
-    initRouter();
-  </script>
-
+  <nav>
+    <a href="library.html">Library</a>
+    <a href="playlists.html">Playlists</a>
+    <a href="profile.html">Profile</a>
+    <a href="preview.html">Profile Preview</a>
+  </nav>
 </body>
 </html>
